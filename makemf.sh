@@ -1,6 +1,6 @@
 pwd
 read -p "Are you sure to overwrite the makefile ?" -n 1 -r
-echo    # (optional) move to a new line
+echo   
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
 	rm -f Makefile
