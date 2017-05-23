@@ -8,7 +8,8 @@ then
 	find /tmp/MMS_LIB/ -name ".git" -delete
 	find /tmp/MMS_LIB/ -name ".*" -delete
 	rm -rf ./MMS_LIB
-	cp -rf /tmp/MMS_LIB ./
+	mkdir mms
+	cp -rf /tmp/MMS_LIB/* ./mms
 	echo "MMS LIB COPY"
 fi
 

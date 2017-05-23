@@ -8,7 +8,8 @@ then
 	find /tmp/VSH_LIB/ -name ".git" -delete
 	find /tmp/VSH_LIB/ -name ".*" -delete
 	rm -rf ./VSH_LIB
-	cp -rf /tmp/VSH_LIB ./
+	mkdir vsh
+	cp -rf /tmp/VSH_LIB/* ./vsh
 	echo "VSH LIB COPY"
 fi
 

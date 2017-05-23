@@ -8,7 +8,8 @@ then
 	find /tmp/MARG_LIB/ -name ".git" -delete
 	find /tmp/MARG_LIB/ -name ".*" -delete
 	rm -rf ./MARG_LIB
-	cp -rf /tmp/MARG_LIB ./
+	mkdir marg
+	cp -rf /tmp/MARG_LIB/* ./marg/
 	echo "MARG LIB COPY"
 fi
 
