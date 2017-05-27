@@ -4,7 +4,7 @@ echo
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
 	rm -f Makefile
-	srcs=$(find *.c | xargs basename | xargs echo | tr " " "\n " | sed 's/\.c/\.c \\/g')
+	srcs=$(find *.c | xargs basename | xargs echo | tr " " "\n " | sed 's/\.c/\.c \\/g' | sed '$s/\\//')
 
 	echo "# **************************************************************************** #" > Makefile
 	echo "#                                                                              #" >> Makefile
@@ -32,7 +32,7 @@ then
 	echo "all: \$(NAME)" >> Makefile
 	echo >> Makefile	
 	echo "%.o: %.c" >> Makefile
-	echo "	gcc -c -Wall -Wextra -Werror -o \$@ $<" >> Makefile
+	echo "	clang -c -Wall -Wextra -Werror -o \$@ $<" >> Makefile
 	echo >> Makefile
 	echo "clean:" >> Makefile
 	echo "	rm -f \$(OBJECTS)" >> Makefile
