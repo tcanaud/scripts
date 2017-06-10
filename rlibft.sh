@@ -5,8 +5,7 @@ if [[ $REPLY =~ ^[Yy]$ ]]
 then
 	rm -rf /tmp/libft
 	cp -rf ~/gitdir/libft /tmp/
-	find /tmp/libft/ -name ".git" -delete
-	find /tmp/libft/ -name ".*" -delete
+	rm -rf /tmp/libft/.git
 	rm -rf ./libft
 	cp -rf /tmp/libft ./
 	echo "LIBFT COPY"

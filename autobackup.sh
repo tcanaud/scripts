@@ -1,7 +1,6 @@
 rm -rf /tmp/backup
 mkdir /tmp/backup
 cp -r ~/gitdir/* /tmp/backup
-rm -rf /tmp/backup/*/.git
 find /tmp/backup/ -name ".*" -delete
 cd ~/backup
 git rm -rf *

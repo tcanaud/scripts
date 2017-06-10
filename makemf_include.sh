@@ -4,7 +4,7 @@ echo
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
 	rm -f Makefile
-	srcs=$(find *.c | xargs echo | tr " " "\n " | sed 's/\.c/\.c \\/g' | sed '$s/\\//')
+	srcs=$(find . -type f | grep ".\.c$" | xargs echo | tr " " "\n " | sed 's/\.c/\.c \\/g' | sed '$s/\\//')
 
 	echo "# **************************************************************************** #" > Makefile
 	echo "#                                                                              #" >> Makefile
@@ -106,7 +106,7 @@ then
 	echo "\$(NAME): \$(OBJECTS)" >> Makefile
 	echo "	@ar rc \$(NAME) \$(OBJECTS)" >> Makefile
 	echo "	@ranlib \$(NAME)" >> Makefile
-	echo "	@printf \"\\\r                                                                                     \r\$(GREEN)\\\r\$(NAME) was created successfully !\$(NOCOLOR)\\\n\"" >> Makefile
+	echo "	@printf \"\\\r                                                                                                                 \r\$(GREEN)\\\r\$(NAME) was created successfully !\$(NOCOLOR)\\\n\"" >> Makefile
 	echo "" >> Makefile
 	echo "echo:" >> Makefile
 	echo "	@printf \"\$(ICONE)\\\n\"" >> Makefile
@@ -116,8 +116,8 @@ then
 	echo "" >> Makefile
 
 	echo "%.o: %.c" >> Makefile
-	echo "	@gcc -c -Wall -Wextra -Werror -o \$@ $< -I include/" >> Makefile
-	echo "	@printf \"\\\r\$(PURPLE)\$@ $<\$(NOCOLOR)                                                                                           \\\r\"" >> Makefile
+	echo "	@gcc -c -Wall -Wextra -Werror -o \$@ $< -I ../include/" >> Makefile
+	echo "	@printf \"\\\r\$(PURPLE)\$@ $<\$(NOCOLOR)                                                                                            \\\r\"" >> Makefile
 	echo "" >> Makefile
 	echo "clean:" >> Makefile
 	echo "	@printf \"\$(YELLOW)Remove the objects\$(NOCOLOR)\\\n\"" >> Makefile
