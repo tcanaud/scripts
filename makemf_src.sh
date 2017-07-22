@@ -4,7 +4,7 @@ echo
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
 	rm -f Makefile
-	srcs=$(find src/*.c | xargs echo | tr " " "\n " | sed 's/\.c/\.c \\/g' | sed '$s/\\//')
+	srcs=$(find src/. | grep "\.c$" | xargs echo | tr " " "\n " | sed 's/\.c/\.c \\/g' | sed '$s/\\//')
 
 	echo "# **************************************************************************** #" > Makefile
 	echo "#                                                                              #" >> Makefile
