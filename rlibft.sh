@@ -4,7 +4,7 @@ echo    # (optional) move to a new line
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
 	rm -rf /tmp/libft
-	cp -rf ~/backup/libft /tmp/
+	cp -rf ~/gitdir/libft /tmp/
 	rm -rf /tmp/libft/.git
 	rm -rf ./libft
 	cp -rf /tmp/libft ./
