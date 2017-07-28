@@ -4,7 +4,7 @@ echo
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
 	rm -f Makefile
-	srcs=$(find srcs | grep "\.c$" | xargs echo | tr " " "\n " | sed 's/\.c/\.c \\/g' | sed '$s/\\//')
+	srcs=$(find . | grep "\.c$" | xargs echo | tr " " "\n " | sed 's/\.c/\.c \\/g' | sed '$s/\\//')
 
 	echo >> Makefile
 	echo "NAME = $1" >> Makefile
@@ -26,7 +26,7 @@ then
 	echo "" >> Makefile
 
 	echo "%.o: %.c" >> Makefile
-	echo "	@gcc -c -Wall -Wextra -Werror -o \$@ $< -I include/" >> Makefile
+	echo "	@gcc -c -Wall -Wextra -Werror -Weverything -o \$@ $< -I include/" >> Makefile
 	echo "	@printf \"\\\r\$(PURPLE)\$@ $<\$(NOCOLOR)                                                                                           \\\r\"" >> Makefile
 	echo "" >> Makefile
 	echo "clean:" >> Makefile
